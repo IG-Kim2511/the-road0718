@@ -1,0 +1,334 @@
+/* COMMON STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Open Sans", sans-serif;
+  /* T */
+  list-style-type: none;
+  /* T */
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+}
+/* T */
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color: #2b81e4;
+  --secondary-color: #eee;
+  --white-color: #fff;
+  --grey-color: #555;
+  --light-grey-color: #777;
+}
+/* T: center 셀렉터를 따로 만들어서 필요한 부분에 적용함 */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--secondary-color);
+  margin: 3.5rem;
+  /* T: */
+  box-shadow: 2rem 4rem 2rem red;
+  /*T: CSS 2 : 거슬리는 스크롤바를 없앰 */
+  overflow: hidden;
+}
+
+/*<header> */
+.header {
+  width: 100%;
+  /* top, bottom 똑같은 넓이 공백넣기 */
+  /*T: 100vh = 100% vh  */
+  /* T: 7rem은 top+bottom 의 공백을 합친 값 */
+  height: calc(100vh - 7rem);
+  /* T: rgba : rgb + opacity */
+  background: linear-gradient(rgba(18, 113, 255, 0.5), rgba(18, 113, 255, 0.3)),
+    url(images/header-bg.jpg) center no-repeat;
+  /* T: */
+  background-size: cover;
+  position: relative;
+  /* T: css 2 */
+  /* T : perspective : 원근법
+  https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
+
+숫자가 적을수록 3d이펙트가 강함.
+보통으로 보이게 하기위해 대충 100rem 넣음.
+  */
+  perspective: 100rem;
+}
+
+.header-text {
+  text-align: center;
+  /* T */
+  text-transform: uppercase;
+  /* T */
+  letter-spacing: 0.1rem;
+  /* T : 오른쪽, 아래, opacity, 색
+  https://developer.mozilla.org/ko/docs/Web/CSS/text-shadow  
+  */
+  text-shadow: 1rem 3rem 0.5rem red;
+}
+.heading {
+  font-size: 8rem;
+  color: var(--white-color);
+}
+.header-paragraph {
+  font-size: 3rem;
+  /* T */
+  font-weight: 500;
+  color: var(--secondary-color);
+  max-width: 70rem;
+  /* T */
+  margin: auto;
+}
+
+/* <logo> */
+.logo {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+.logo h1 {
+  display: flex;
+}
+.logo h1 span {
+  font-size: 2rem;
+  /* T */
+  font-weight: 900;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  background-color: var(--white-color);
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+}
+
+/* T: keyframes
+https://iankim2511.tistory.com/57
+ */
+
+.logo h1 span:nth-child(1) {
+  animation: drop-letters 2s 0.1s infinite;
+}
+.logo h1 span:nth-child(2) {
+  animation: drop-letters 2s 0.2s infinite;
+}
+.logo h1 span:nth-child(3) {
+  animation: drop-letters 2s 0.3s infinite;
+}
+.logo h1 span:nth-child(4) {
+  animation: drop-letters 2s 0.4s infinite;
+}
+.logo h1 span:nth-child(5) {
+  animation: drop-letters 2s 0.5s infinite;
+}
+.logo h1 span:nth-child(6) {
+  animation: drop-letters 2s 0.6s infinite;
+}
+.logo h1 span:nth-child(7) {
+  animation: drop-letters 2s 0.7s infinite;
+}
+
+@keyframes drop-letters {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* T: CSS 2 */
+
+.header-image {
+  width: 35%;
+  /* T: */
+  animation: image-float 10s infinite;
+}
+
+@keyframes image-float {
+  0% {
+    transform: translateZ(40rem);
+    opacity: 1;
+    background-color: yellow;
+  }
+  40% {
+    transform: translateZ(-500rem) translateX(150rem);
+    opacity: 0.2;
+    background-color: blue;
+  }
+  70% {
+    transform: translateZ(-1500rem) translateX(800rem);
+    opacity: 0.6;
+    background-color: aqua;
+  }
+  80% {
+    transform-origin: translatez(40rem);
+    opacity: 0.8;
+    background-color: black;
+  }
+  100% {
+    transform: translateZ(40rem);
+    opacity: 0.5;
+    background-color: red;
+  }
+}
+
+/* <Popular tours> */
+.popular-tours {
+  padding: 5rem 0 10rem 0;
+}
+.popular-tours-heading {
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  color: var(--primary-color);
+  text-shadow: 1rem 2rem 0.5rem red;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+/* css 4: card, card-image의 width 를 함께 조절해서 flex사이의 빈칸 완성 */
+.card {
+  width: 35rem;
+  position: relative;
+  /* CSS 8 . JS 2*/
+  /* T알고리즘 : perspective : 원근법으로 card front-back side toggle 코딩 시작
+숫자가 적을수록 3d이펙트가 강함.
+보통으로 보이게 하기위해 대충 150rem 넣고 시작 
+transform으로 앞으로 빼오는 방식
+*/
+  perspective: 150rem;
+}
+/* css 4 */
+.card-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+.front-side {
+  text-align: center;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  /* CSS 6 */
+  position: relative;
+  z-index: 10;
+  /* CSS 8 */
+  opacity: 0.9;
+  /* T: JS 2 */
+  transition: opacity 1s, transform 1s, box-shadow 1s;
+}
+
+/* JS 2 */
+.change > .front-side {
+  transform: translateZ(-5rem) translateX(3rem);
+  box-shadow: 0 2rem 4rem #777;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.tour-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 0 2rem blue;
+  /* CSS 6 : 글자를 absolute줘서 위로 올려서 사진안에 넣음
+  */
+  position: absolute;
+  top: 30%;
+  right: 1.5rem;
+  color: var(--white-color);
+}
+.card-list {
+  width: 80%;
+  /* T: 가운데 정렬 */
+  margin: auto;
+  padding: 2rem 0 3rem 0;
+}
+.card-list-item {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--light-grey-color);
+  margin: 2rem 0;
+  /* T */
+  border-bottom: 0.1rem solid var(--primary-color);
+  padding-bottom: 1.5rem;
+}
+
+.back-side {
+  /* CSS 6 */
+  position: absolute;
+  top: 0;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem #777;
+  flex-direction: column;
+  /* CSS 8 */
+  opacity: 0.5;
+  /* CSS 8 */
+  transform: translateZ(-5rem) translateX(3rem);
+  /* T: JS 2 */
+  transition: opacity 1s, transform 1s, box-shadow 1s;
+}
+
+/* JS 2 <pupular tours> 버튼누르면 앞뒤 화면전환 */
+
+.change > .back-side {
+  transform: translateZ(0) translateX(0);
+  box-shadow: 0 0.5rem 2rem #aaa;
+  opacity: 0.9;
+}
+
+.tour-price {
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--white-color);
+  margin-bottom: 3rem;
+}
+
+.card-button {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border: none;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  /* T */
+  letter-spacing: 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.navigation-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rega(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  color: var(--light-grey-color);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* T */
+  text-transform: uppercase;
+  letter-spacing: 2rem;
+  cursor: pointer;
+}

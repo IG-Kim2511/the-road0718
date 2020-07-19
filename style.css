@@ -34,7 +34,7 @@ html {
 .container {
   background-color: var(--secondary-color);
   margin: 3.5rem;
-  /* T: */
+  /* T: 수평,수직, 흐릿함과 확산 , 색상 */
   box-shadow: 2rem 4rem 2rem red;
   /*T: CSS 2 : 거슬리는 스크롤바를 없앰 */
   overflow: hidden;
@@ -55,8 +55,6 @@ html {
   position: relative;
   /* T: css 2 */
   /* T : perspective : 원근법
-  https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
-
 숫자가 적을수록 3d이펙트가 강함.
 보통으로 보이게 하기위해 대충 100rem 넣음.
   */
@@ -331,4 +329,58 @@ transform으로 앞으로 빼오는 방식
   text-transform: uppercase;
   letter-spacing: 2rem;
   cursor: pointer;
+}
+/* <Stories> */
+.stories {
+  padding: 10rem 0;
+}
+.stories-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-bg {
+  background-color: #bbb
+  padding: 5rem;
+  margin: 5rem;
+  width: 70%;
+  box-shadow: 0 2rem 5rem rgba(51, 51, 51, 0.4);
+  /* CSS 10 : T : skewX*/
+  transform: skewX(20deg);
+}
+.story {
+  /* CSS 10 : 사진만 원래모습으로 보이게 함 */
+  transform: skewX(-20deg);
+  display: flex;
+}
+.story-image {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  /* T  : 사진 선명하게*/
+  object-fit: cover;
+  margin-right: 5rem;
+}
+.story-text{
+  /* T: */
+  letter-spacing: 1rem;
+
+}
+.story-heading{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--grey-color);
+  margin-bottom: 1rem;
+
+}
+.story-paragraph{
+  font-size: 1.8rem;
+  color: var(--light-grey-color);
+
+}
+/* T : */
+.story-paragraph:first-letter{
+  margin-left: 2rem;
+
 }

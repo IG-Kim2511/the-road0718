@@ -333,7 +333,29 @@ transform으로 앞으로 빼오는 방식
 /* <Stories> */
 .stories {
   padding: 10rem 0;
+  /* CSS 12 */
+  position: relative;
 }
+
+.video-container {
+  /* CSS 12 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* CSS 14 : container의 width도 100%설정 */
+  height: 100%;
+  opacity: 0.4;
+}
+
+.bg-video {
+  /* CSS 14 */
+  width: 100%;
+  height: 100%;
+  /* T: */
+  object-fit: cover;
+}
+
 .stories-wrapper {
   display: flex;
   flex-direction: column;
@@ -341,7 +363,7 @@ transform으로 앞으로 빼오는 방식
 }
 
 .story-bg {
-  background-color: #bbb
+  background-color: rgba(238, 238, 238, 0.85);
   padding: 5rem;
   margin: 5rem;
   width: 70%;
@@ -362,25 +384,21 @@ transform으로 앞으로 빼오는 방식
   object-fit: cover;
   margin-right: 5rem;
 }
-.story-text{
+.story-text {
   /* T: */
-  letter-spacing: 1rem;
-
+  letter-spacing: 0.1rem;
 }
-.story-heading{
+.story-heading {
   font-size: 2.5rem;
   text-transform: uppercase;
   color: var(--grey-color);
   margin-bottom: 1rem;
-
 }
-.story-paragraph{
+.story-paragraph {
   font-size: 1.8rem;
   color: var(--light-grey-color);
-
 }
 /* T : */
-.story-paragraph:first-letter{
+.story-paragraph:first-letter {
   margin-left: 2rem;
-
 }

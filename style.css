@@ -1,4 +1,4 @@
-/* Global */
+/*[Global] */
 :root {
   /* color */
   --primary-color: #2b81e4;
@@ -70,8 +70,39 @@ html {
   /*T: CSS 2 : 거슬리는 스크롤바를 없앰 */
   overflow: hidden;
 }
+/* [navbar] */
 
-/*<header> */
+.navbar-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  cursor: pointer;
+  /* CSS 26 . T: navbar의 div막대 3개가 row로 겹쳐있는걸 column으로 바꿈*/
+  flex-direction: column;
+}
+
+.open-navbar-icon {
+  /* T: fixed. z-index */
+  position: fixed;
+  top: 6.5rem;
+  left: 6.5rem;
+  z-index: 200;
+}
+
+/* CSS 26 */
+.navbar-icon .line {
+  height: 0.5rem;
+  width: 3.5rem;
+  
+}
+
+/* 클릭해서 x모양으로 바뀔 때 navbar  */
+.navbar-wrapper {
+  display: none;
+}
+
+/*[header] */
 .header {
   width: 100%;
   /* top, bottom 똑같은 넓이 공백넣기 */
@@ -556,16 +587,15 @@ transform으로 앞으로 빼오는 방식
   }
 }
 /* [Footer] */
-.footer{
+.footer {
   background-color: var(--grey-color);
   padding: 4rem 0 2rem 0;
 }
-.footer-list{
+.footer-list {
   display: flex;
   justify-content: center;
-
 }
-.footer-link{
+.footer-link {
   font-size: 2rem;
   color: var(--white-color);
   margin: 0 2rem;
@@ -574,17 +604,14 @@ transform으로 앞으로 빼오는 방식
   letter-spacing: 0.5rem;
   /* CSS 24 */
   transition: all 0.2s;
-
 }
-.footer-link:hover{
+.footer-link:hover {
   /* CSS 24 */
   transform: rotate(-10deg);
   box-shadow: 0 2rem 3rem #000;
-
-
 }
 
-.footer-paragraph{
+.footer-paragraph {
   text-align: center;
   font-size: 1.5rem;
   color: var(--secondary-color);

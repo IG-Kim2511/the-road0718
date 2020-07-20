@@ -64,6 +64,7 @@ html {
 
 .container {
   background-color: var(--secondary-color);
+  /* T: CSS 28 */
   margin: 3.5rem;
   /* T: 수평,수직, 흐릿함과 확산 , 색상 */
   box-shadow: 2rem 4rem 2rem red;
@@ -94,13 +95,82 @@ html {
 .navbar-icon .line {
   height: 0.5rem;
   width: 3.5rem;
-  
+}
+.open-navbar-icon .line {
+  margin: 0.3rem 0;
 }
 
 /* 클릭해서 x모양으로 바뀔 때 navbar  */
 .navbar-wrapper {
-  display: none;
+  /* display: none; */
+  /* T: vw: view width, vh: view height */
+  /* ????: 다른곳은 rem쓰다가, 왜 여기에서는 vw, vh를 썼지? */
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--test-color);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 300;
+  /* opacity: 0.9; */
+  /* T: CSS 28 : container와 크기 똑같이 맞추기*/
+  padding: 3.5rem 5.5rem 3.5rem 3.5rem;
 }
+
+.navbar {
+  width: 100%;
+  height: 100%;
+
+  /* T: 검은색gradient에서 opacity만 조절 */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url(images/navbar-bg.jpg) center no-repeat;
+  /* CSS 30 ,32*/
+  position: relative;
+}
+
+.close-navbar-icon {
+  /* CSS 30 */
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  z-index: 300;
+}
+/* CSS 32 */
+.close-navbar-icon .line {
+  position: absolute;
+}
+/* CSS 32 */
+/* T: 40deg */
+.line-1 {
+  transform: rotate(40deg);
+}
+/* CSS 32 */
+.line-2 {
+  transform: rotate(-40deg);
+}
+.nav-list {
+  /* CSS 34 :T: 컨테이너 크기만큼의 height. */
+  height: 100%;
+  /* T: */
+  display: flex;
+}
+
+.nav-link {
+  /* CSS 34 */
+  width: 100%;
+  /*css 34 : 글자크기만큼의 height */
+  height: 100%;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white-color);
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+
+
+
 
 /*[header] */
 .header {

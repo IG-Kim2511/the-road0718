@@ -402,3 +402,34 @@ transform으로 앞으로 빼오는 방식
 .story-paragraph:first-letter {
   margin-left: 2rem;
 }
+
+/* <Contact> */
+.contact {
+  padding: 15rem 0 20rem 0;
+  text-align: center;
+  /* T: background: url */
+  background: url(images/contact-us-bg.png) center no-repeat;
+  background-size: cover;
+  animation: contact-bg 35s infinite;
+}
+.contact-heading {
+  font-size: 7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--white-color);
+  text-shadow: 0 1rem 2rem #000;
+  margin-bottom: 8rem;
+}
+.contact-form {
+  width: 70rem;
+  height: 50rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* T: 수평 정렬+*/
+  margin: auto;
+  /* CSS 16 */
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem #000;
+  padding: 5rem;
+}

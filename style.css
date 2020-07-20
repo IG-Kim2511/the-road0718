@@ -555,3 +555,39 @@ transform으로 앞으로 빼오는 방식
     background-color: darkorange;
   }
 }
+/* [Footer] */
+.footer{
+  background-color: var(--grey-color);
+  padding: 4rem 0 2rem 0;
+}
+.footer-list{
+  display: flex;
+  justify-content: center;
+
+}
+.footer-link{
+  font-size: 2rem;
+  color: var(--white-color);
+  margin: 0 2rem;
+  background-color: var(--grey-color);
+  padding: 0.3rem 3rem;
+  letter-spacing: 0.5rem;
+  /* CSS 24 */
+  transition: all 0.2s;
+
+}
+.footer-link:hover{
+  /* CSS 24 */
+  transform: rotate(-10deg);
+  box-shadow: 0 2rem 3rem #000;
+
+
+}
+
+.footer-paragraph{
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  letter-spacing: 0.2rem;
+  margin-top: 5rem;
+}

@@ -110,11 +110,21 @@ html {
   background-color: var(--test-color);
   position: fixed;
   left: 0;
-  bottom: 0;
+  /* CSS 38. JS 6 */
+  bottom: -100%;
+  opacity: 0;
+
   z-index: 300;
   /* opacity: 0.9; */
   /* T: CSS 28 : container와 크기 똑같이 맞추기*/
   padding: 3.5rem 5.5rem 3.5rem 3.5rem;
+}
+
+/* CSS 38. JS 6 */
+.change .navbar-wrapper{
+  bottom: 0;
+  opacity: 1;
+
 }
 
 .navbar {
@@ -166,11 +176,24 @@ html {
   text-transform: uppercase;
 
   opacity: 0.8;
+
+  /* CSS 38. JS 6 */
+  position: relative;
+  top: -100%;
+  /* CSS 36 */
+  transition: all 0.3s;
+  
+}
+/* CSS 38. JS 6 */
+.change .nav-link{
+  top: 0;
 }
 
-
-
-
+/* CSS 36 */
+.nav-link:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
 
 /*[header] */
 .header {

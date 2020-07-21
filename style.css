@@ -31,6 +31,7 @@
   /* Size */
   --size-border-basic-radius: 0.5rem;
   --size-border-test-radius: 1rem;
+
   /* animation */
   --animation_basic-duration: 0.3s;
   --animation_test-duration: 1s;
@@ -43,6 +44,7 @@
   padding: 0;
 
   font-family: "Open Sans", sans-serif;
+
   /* T */
   list-style-type: none;
   /* T */
@@ -745,16 +747,6 @@ transform으로 앞으로 빼오는 방식
 }
 
 @media (max-width: 1200px) {
-  .cards-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    margin: 1rem 0;
-  }
-  .story-bg {
-    width: 85%;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -794,6 +786,10 @@ transform으로 앞으로 빼오는 방식
     padding: 0.3rem 2rem;
     margin: 0 1rem;
   }
+  /* T: 전체 font크기 낮춰서 간단하게 해결 */
+  html {
+    font-size: 50%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -812,6 +808,17 @@ transform으로 앞으로 빼오는 방식
   }
   .footer-link {
     margin: 1rem 0;
+  }
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin: 1rem 0;
+  }
+  .story-bg {
+    width: 85%;
   }
 }
 @media (max-width: 650px) {
@@ -840,5 +847,8 @@ transform으로 앞으로 빼오는 방식
 @media (max-width: 500px) {
   html {
     font-size: 45%;
+  }
+  .contact-heading {
+    margin-bottom: -20rem;
   }
 }

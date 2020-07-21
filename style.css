@@ -120,15 +120,19 @@ html {
   padding: 3.5rem 5.5rem 3.5rem 3.5rem;
 
   /* CSS 40 */
+  /* bottom에서 올라오는 속도, opacity 적용되는 속도 */
   transition: bottom 0.5s, opacity 0.2s;
 }
 
 /* CSS 38. JS 6 */
+/* navbar-icon클릭할때 .change추가 */
 .change .navbar-wrapper {
-  bottom: 0;
+  /* position..위치,opacity */
+  bottom: -10%;
   opacity: 1;
 
   /* CSS 40 */
+  /* bottom에서 올라오는 속도, opacity 적용되는 속도, 화면표시되기까지 delay */
   transition: bottom 0.5s, opacity 0.2s 0.25s;
 }
 
@@ -141,6 +145,8 @@ html {
     url(images/navbar-bg.jpg) center no-repeat;
   /* CSS 30 ,32*/
   position: relative;
+
+  
 }
 
 .close-navbar-icon {
@@ -196,11 +202,11 @@ html {
 /* CSS 36 */
 .nav-link:hover {
   opacity: 1;
-  color: var(--primary-color);
+  color: purple;
 }
 
 /* CSS 40 */
-/*T: ??????? */
+/*T: top에서 내려오는 속도 (duration) + delay, opacity 적용되는 속도, color delay*/
 .change .nav-link:nth-child(1) {
   transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
 }

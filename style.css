@@ -9,6 +9,7 @@
   --test-color: green;
 
   /* font size */
+  /* 기본 1rem = 16px */
   --font-large: 1.6rem;
   --font-medium: 1.4rem;
   --font-regular: 1.2rem;
@@ -16,6 +17,7 @@
   --font-micro: 0.8rem;
 
   /* Font weight */
+  /* 기본 400 */
 
   --weight-bold: 700;
 

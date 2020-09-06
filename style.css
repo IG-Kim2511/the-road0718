@@ -412,6 +412,7 @@ transform으로 앞으로 빼오는 방식
   width: 100%;
   border-radius: 1rem;
 }
+
 .front-side {
   text-align: center;
   background-color: var(--white-color);
@@ -445,6 +446,7 @@ transform으로 앞으로 빼오는 방식
   right: 1.5rem;
   color: var(--white-color);
 }
+
 .card-list {
   width: 80%;
   /* T: 가운데 정렬 */
@@ -456,7 +458,7 @@ transform으로 앞으로 빼오는 방식
   font-weight: 500;
   color: var(--light-grey-color);
   margin: 2rem 0;
-  /* T */
+  /* T :border*/
   border-bottom: 0.1rem solid var(--primary-color);
   padding-bottom: 1.5rem;
 }
@@ -464,6 +466,7 @@ transform으로 앞으로 빼오는 방식
 .back-side {
   /* CSS 6 */
   position: absolute;
+  /* ???? top:0 */
   top: 0;
   background-color: var(--primary-color);
   width: 100%;
@@ -505,6 +508,7 @@ transform으로 앞으로 빼오는 방식
   border-radius: 5rem;
   cursor: pointer;
 }
+
 .navigation-button {
   position: absolute;
   top: 0.5rem;
@@ -585,6 +589,7 @@ transform으로 앞으로 빼오는 방식
   color: var(--grey-color);
   margin-bottom: 1rem;
 }
+
 .story-paragraph {
   font-size: 1.8rem;
   color: var(--light-grey-color);
@@ -604,6 +609,27 @@ transform으로 앞으로 빼오는 방식
   /* CSS 22 keyframes*/
   animation: contact-bg 5s infinite;
 }
+
+/* CSS 22 keyframes*/
+
+@keyframes contact-bg {
+  0% {
+    background-color: cadetblue;
+  }
+  25% {
+    background-color: burlywood;
+  }
+  50% {
+    background-color: aqua;
+  }
+  70% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: darkorange;
+  }
+}
+
 .contact-heading {
   font-size: 7rem;
   font-weight: 700;
@@ -696,25 +722,6 @@ transform으로 앞으로 빼오는 방식
   min-width: 50rem;
 }
 
-/* CSS 22 keyframes*/
-
-@keyframes contact-bg {
-  0% {
-    background-color: cadetblue;
-  }
-  25% {
-    background-color: burlywood;
-  }
-  50% {
-    background-color: aqua;
-  }
-  70% {
-    background-color: yellowgreen;
-  }
-  100% {
-    background-color: darkorange;
-  }
-}
 /* [Footer] */
 .footer {
   background-color: var(--grey-color);
